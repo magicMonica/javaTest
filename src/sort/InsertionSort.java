@@ -19,6 +19,38 @@ public class InsertionSort {
      * @return
      */
     public static int[] insertionSort1(int[] toSortList){
+        int len = toSortList.length;
+        if(len <= 1){
+            return toSortList;
+        }else{
+            for (int i = 1; i < len; i++) {
+                int key = toSortList[i];   //取出下一个元素
+                int j = i - 1 ;
+                while(j > 0 && toSortList[j] > key){ //在已经排序的元素序列中从后向前扫描
+                    toSortList[j+1] = toSortList[j]; //将该元素移动到下一位置
+                    j--;
+                }
+                toSortList[j+1] = key;
+            }
+
+        }
+        return toSortList;
+    }
+
+    /**
+     * 插入排序--优化版
+     * 查找插入位置时使用二分查找的方式
+     *
+     * @param toSortList
+     * @return
+     */
+    public static int[] insertionSort2(int[] toSortList) {
+        int len = toSortList.length;
+        if (len <= 1) {
+            return toSortList;
+        } else {
+
+        }
         return toSortList;
     }
 }
