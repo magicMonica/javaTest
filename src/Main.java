@@ -1,5 +1,5 @@
 import sort.BaseSort;
-import sort.ShellSort;
+import sort.QuickSort;
 
 import java.util.Random;
 
@@ -19,7 +19,7 @@ public class Main {
 //        SelectionSort.sort.selectionSort(list);
 //        InsertionSort.insertionSort1(list);
 //        InsertionSort.insertionSort2(list);
-        BaseSort sort = new ShellSort();
+        BaseSort sort = new QuickSort();
         sort.sort(list);
         Long end = System.currentTimeMillis();
         for (int i = 0; i < list.length; i++) {
