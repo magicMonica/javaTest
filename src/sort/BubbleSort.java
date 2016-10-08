@@ -18,14 +18,13 @@ public class BubbleSort {
         int len = toSortList.length;
         if(len <= 1){
             return toSortList;
-        }else{
-            for(int i = 0 ; i < len ;i ++ ){
-                for(int j = 0 ; j < len - i - 1 ;j++){
-                    if (toSortList[j] > toSortList[j + 1]) {
-                        int temp = toSortList[j];
-                        toSortList[j] = toSortList[j + 1];
-                        toSortList[j + 1] = temp;
-                    }
+        }
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len - i - 1; j++) {
+                if (toSortList[j] > toSortList[j + 1]) {
+                    int temp = toSortList[j];
+                    toSortList[j] = toSortList[j + 1];
+                    toSortList[j + 1] = temp;
                 }
             }
         }

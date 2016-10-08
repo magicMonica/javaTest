@@ -22,17 +22,15 @@ public class InsertionSort {
         int len = toSortList.length;
         if(len <= 1){
             return toSortList;
-        }else{
-            for (int i = 1; i < len; i++) {
-                int key = toSortList[i];   //取出下一个元素
-                int j = i - 1 ;
-                while(j >= 0 && toSortList[j] > key){ //在已经排序的元素序列中从后向前扫描
-                    toSortList[j+1] = toSortList[j]; //将该元素移动到下一位置
-                    j--;
-                }
-                toSortList[j+1] = key;
+        }
+        for (int i = 1; i < len; i++) {
+            int key = toSortList[i];   //取出下一个元素
+            int j = i - 1;
+            while (j >= 0 && toSortList[j] > key) { //在已经排序的元素序列中从后向前扫描
+                toSortList[j + 1] = toSortList[j]; //将该元素移动到下一位置
+                j--;
             }
-
+            toSortList[j + 1] = key;
         }
         return toSortList;
     }

@@ -19,6 +19,9 @@ public class ShellSort implements BaseSort {
     @Override
     public int[] sort(int[] toSortList) {
         int len = toSortList.length;
+        if(len < 2){
+            return toSortList;
+        }
         int temp ,gap = 1, j;
         while (gap < len /5) {
             gap = gap * 5 + 1;
