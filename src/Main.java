@@ -1,3 +1,6 @@
+import sort.BaseSort;
+import sort.ShellSort;
+
 import java.util.Random;
 
 public class Main {
@@ -14,6 +17,10 @@ public class Main {
 //        BubbleSort.bubbleSort2(list);
 //        BubbleSort.bubbleSort3(list);
 //        SelectionSort.sort.selectionSort(list);
+//        InsertionSort.insertionSort1(list);
+//        InsertionSort.insertionSort2(list);
+        BaseSort sort = new ShellSort();
+        sort.sort(list);
         Long end = System.currentTimeMillis();
         for (int i = 0; i < list.length; i++) {
             System.out.println(list[i] + " ");

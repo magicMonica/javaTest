@@ -26,7 +26,7 @@ public class InsertionSort {
             for (int i = 1; i < len; i++) {
                 int key = toSortList[i];   //取出下一个元素
                 int j = i - 1 ;
-                while(j > 0 && toSortList[j] > key){ //在已经排序的元素序列中从后向前扫描
+                while(j >= 0 && toSortList[j] > key){ //在已经排序的元素序列中从后向前扫描
                     toSortList[j+1] = toSortList[j]; //将该元素移动到下一位置
                     j--;
                 }
@@ -49,7 +49,23 @@ public class InsertionSort {
         if (len <= 1) {
             return toSortList;
         } else {
-
+            for (int i = 1; i < len; i++) {
+                int key = toSortList[i];
+                int left = 0;
+                int right = i - 1;
+                while (left <= right){
+                    int middle = (left + right) /2;
+                    if(key < toSortList[middle]){
+                        right = middle - 1;
+                    }else{
+                        left = middle + 1;
+                    }
+                }
+                for (int j = i-1; j >= left ; j--) {
+                    toSortList[j + 1] = toSortList[j];
+                }
+                toSortList[left] = key;
+            }
         }
         return toSortList;
     }
